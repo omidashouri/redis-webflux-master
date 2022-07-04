@@ -19,8 +19,8 @@ public class ProductLocalCacheTemplate extends CacheTemplate<Integer, Product> {
 
     public ProductLocalCacheTemplate(RedissonClient client) {
         LocalCachedMapOptions<Integer, Product> mapOptions = LocalCachedMapOptions.<Integer, Product>defaults()
-                .syncStrategy(LocalCachedMapOptions.SyncStrategy.UPDATE)
-                .reconnectionStrategy(LocalCachedMapOptions.ReconnectionStrategy.CLEAR);
+                .syncStrategy(LocalCachedMapOptions.SyncStrategy.UPDATE) //update all other redis in cluster
+                .reconnectionStrategy(LocalCachedMapOptions.ReconnectionStrategy.CLEAR); //if redis disconnect clear the cache
         this.map = client.getLocalCachedMap("product", new TypedJsonJacksonCodec(Integer.class, Product.class), mapOptions);
     }
 

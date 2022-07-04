@@ -20,7 +20,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="redis-performance" options="-parameters" />
+      <module name="redis-performance" options="-parameters --add-modules java.base" />
       <module name="redis-spring" options="-parameters" />
     </option>
   </component>

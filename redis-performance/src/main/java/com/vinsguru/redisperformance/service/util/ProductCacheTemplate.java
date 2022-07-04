@@ -15,6 +15,7 @@ public class ProductCacheTemplate extends CacheTemplate<Integer, Product> {
     private ProductRepository repository;
     private RMapReactive<Integer, Product> map;
 
+    //define constructor for RMapReactive, but get from RedissonReactiveClient
     public ProductCacheTemplate(RedissonReactiveClient client) {
         this.map = client.getMap("product", new TypedJsonJacksonCodec(Integer.class, Product.class));
     }

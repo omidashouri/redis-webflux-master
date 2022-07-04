@@ -21,6 +21,7 @@ public class DataSetupService implements CommandLineRunner {
     @Autowired
     private ProductRepository repository;
 
+//    need to run sql query
     @Autowired
     private R2dbcEntityTemplate entityTemplate;
 

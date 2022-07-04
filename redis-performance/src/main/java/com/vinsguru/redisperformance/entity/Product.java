@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
-@Table
+@Table //this annotation specify this belongs to database, not redis
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
