@@ -24,7 +24,7 @@ public class ProductVisitService {
 
     @Autowired
     private RedissonReactiveClient client;
-    private Sinks.Many<Integer> sink;
+    private Sinks.Many<Integer> sink; //sink is publisher
 
     public ProductVisitService() {
         this.sink = Sinks.many().unicast().onBackpressureBuffer();
